@@ -65,3 +65,41 @@
   cursor:  pointer;
   background-color: aqua;
 }
+
+.sunny {
+  background-color: #edeb80;
+}
+
+.zoek {
+  margin-top: 1rem;
+}
+
+.react-autosuggest__suggestions-list {
+  list-style-type: none;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 5%;
+}
+
+/* Footer.css */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px; /* Height can be adjusted based on your design */
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 3%;
+}
+
+.footer .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.text-muted {
+  color: #666;
+}

@@ -82,13 +82,13 @@ class AutosuggestComponent extends Component<AutosuggestProps, AutosuggestState>
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                     onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                     getSuggestionValue={suggestion => suggestion}
-                    renderSuggestion={suggestion => <div>{suggestion}</div>}
+                    renderSuggestion={suggestion => <div className="suggestions">{suggestion}</div>}
                     inputProps={inputProps}
                     onSuggestionSelected={this.onSuggestionSelected}
                 />
 
                 {inputProps.value && 
-                    <button onClick={this.handleAddCustomLocation}>Locatie toevoegen</button>
+                    <button className="zoek" onClick={this.handleAddCustomLocation}>Zoek locatie</button>
                 }
             </div>
         );

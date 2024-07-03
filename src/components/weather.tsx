@@ -69,7 +69,17 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
         <h2>10-Day Weather Forecast for {name}, {country}</h2>
         <div className="forecast">
             {weatherData.forecast.forecastday.map((day, index) => (
+                day.day.condition.text.search("Sunny") &&
                 <div key={index} className="forecast-day">
+                    <h3>{new Date(day.date).toLocaleDateString()}</h3>
+                    <h3>{new Date(day.date).toLocaleString('default', {weekday: 'long'})}</h3>
+                    <img src={day.day.condition.icon} alt={day.day.condition.text} />
+                    <p>Temperature: {day.day.avgtemp_c}°C</p>
+                    <p>Condition: {day.day.condition.text}</p>
+                </div>
+                
+                || !day.day.condition.text.search("Sunny") &&
+                <div key={index} className="forecast-day sunny">
                     <h3>{new Date(day.date).toLocaleDateString()}</h3>
                     <h3>{new Date(day.date).toLocaleString('default', {weekday: 'long'})}</h3>
                     <img src={day.day.condition.icon} alt={day.day.condition.text} />
