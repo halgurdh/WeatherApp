@@ -25,7 +25,7 @@ const App: React.FC = () => {
     }, [addedLocation]);
 
     return (
-        <div>
+		<div>
             <h1>K*tRegen</h1>
             <div>
                 {addedLocation.map((location, index) => (
@@ -35,9 +35,7 @@ const App: React.FC = () => {
                     </div>
                 ))}
             </div>
-            <button className='buttonAdd' onClick={() => {}}>
-                Add Location
-            </button>
+
             <AutosuggestComponent onLocationSelected={addLocation} />
         </div>
     );
