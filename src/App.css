@@ -43,5 +43,16 @@
 
 .forecast-day {
   display: inline-block;
-  width: 8rem;
+  width: 7rem;
+  vertical-align: top;
+  }
+
+.buttonAdd {
+  background-color: aqua;
+}
+
+
+.buttonRemove {
+  background-color: red;
+  float: right;
 }

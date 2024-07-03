@@ -20,7 +20,11 @@ interface WeatherData {
     };
 }
 
-const Weather: React.FC = () => {
+interface WeatherProps {
+    location: string;
+}
+
+const Weather: React.FC<WeatherProps>  = ({location}) => {
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -43,8 +47,8 @@ const Weather: React.FC = () => {
             }
         };
 
-        fetchWeatherData("London");
-    }, []);
+        fetchWeatherData(location);
+    }, [location]);
 
     if (loading) {
         return <p>Loading...</p>;
