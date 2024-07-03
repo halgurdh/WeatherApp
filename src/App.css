@@ -56,3 +56,12 @@
   background-color: red;
   float: right;
 }
+
+.weather-info {
+  scale: 90%;
+}
+
+.suggestions:hover {
+  cursor:  pointer;
+  background-color: aqua;
+}
