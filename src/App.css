@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.forecast-day {
+  display: inline-block;
+  width: 8rem;
+}
