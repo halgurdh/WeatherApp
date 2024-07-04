@@ -5,7 +5,7 @@ import AutosuggestComponent from './components/autosuggest';
 import Footer from './components/footer';
 
 const App: React.FC = () => {
-    document.title = "K*tRegen"; // Setting document title
+    document.title = "WeatherApp"; // Setting document title
 
     const [addedLocation, setAddedLocation] = useState<string[]>(() => {
         const storedLocations = localStorage.getItem('addedLocations');
@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
     return (
             <div className="App">
-                <h1>K*tRegen</h1>
+                <h1>WeatherApp</h1>
                 <div>
                     {addedLocation.map((location, index) => (
                         <div key={index}>
