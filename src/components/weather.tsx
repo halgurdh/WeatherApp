@@ -32,6 +32,14 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    const getDate = (date:Date) => {
+        const yyyy = date.getFullYear().toString().substring(2);
+        let mm:number = date.getMonth() + 1; // Months start at 0!
+        let dd:number = date.getDay();
+    
+        return dd + '/' + mm + '/' + yyyy;
+    }
+
     useEffect(() => {
         const fetchWeatherData = async (location:string) => {
             try {
@@ -77,7 +85,7 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
                     || (day.day.totalprecip_mm <= 2 && day.day.totalsnow_cm == 0) && day.day.maxwind_kph < 30 && day.day.avgtemp_c > 15 && day.day.avgtemp_c < 30) {
                     return (
                         <div key={index} className="forecast-day sunny">
-                            <h3>{new Date(day.date).toLocaleDateString()}</h3>
+                            <h3>{getDate(new Date(day.date))}</h3>
                             <h3>{new Date(day.date).toLocaleString('default', { weekday: 'long' })}</h3>
                             <img src={day.day.condition.icon} alt={day.day.condition.text} />
                             <p>Rain: {day.day.totalprecip_mm} mm</p>
@@ -88,7 +96,7 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
                 } else {
                     return (
                         <div key={index} className="forecast-day">
-                            <h3>{new Date(day.date).toLocaleDateString()}</h3>
+                            <h3>{getDate(new Date(day.date))}</h3>
                             <h3>{new Date(day.date).toLocaleString('default', { weekday: 'long' })}</h3>
                             <img src={day.day.condition.icon} alt={day.day.condition.text} />
                             <p>Rain: {day.day.totalprecip_mm} mm</p>
