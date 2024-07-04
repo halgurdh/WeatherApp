@@ -39,11 +39,6 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: 'Create env file'
-        run: |
-          touch .env
-          echo VITE_API_KEY_WEATHER = 38668b7cf7cb4fa68e8204631242606
-          cat .env
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
