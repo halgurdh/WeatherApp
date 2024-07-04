@@ -39,7 +39,7 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
 
                 const response = await fetch(forecastURL);
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`Location not found`);
                 }
                 const data: WeatherData = await response.json();
                 setWeatherData(data);
@@ -68,6 +68,7 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
     const { name, country } = weatherData.location;
 
     return (
+        weatherData &&
         <div className="weather-info">
         <h2>10-Day Weather Forecast for {name}, {country}</h2>
         <div className="forecast">
