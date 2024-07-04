@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Weather from './components/weather';
 import AutosuggestComponent from './components/autosuggest';
 import Footer from './components/footer';
+import Header from './components/header';
 
 const App: React.FC = () => {
     document.title = "WeatherApp"; // Setting document title
@@ -27,11 +28,12 @@ const App: React.FC = () => {
 
     return (
             <div className="App">
+                <Header/>
                 <h1>WeatherApp</h1>
                 <div>
                     {addedLocation.map((location, index) => (
                         <div key={index}>
-                            <button className='buttonRemove' onClick={() => removeLocation(index)}>X</button>
+                            <button title="Remove" className='buttonRemove' onClick={() => removeLocation(index)}>X</button>
                             <Weather location={location} />
                         </div>
                     ))}

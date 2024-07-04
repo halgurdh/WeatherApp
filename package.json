@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.4",
     "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-autosuggest": "^10.1.0",

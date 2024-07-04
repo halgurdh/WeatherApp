@@ -95,3 +95,11 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.header {
+  position: relative;
+  width: 3rem;
+  margin-top: -10rem;
+  color: aqua;
+  margin-left: 50%;
+}
