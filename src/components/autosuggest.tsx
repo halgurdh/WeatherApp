@@ -254,12 +254,14 @@ class AutosuggestComponent extends Component<AutosuggestProps, AutosuggestState>
     };
 
     onChange = (event: React.FormEvent, { newValue }: { newValue: string }) => {
+        console.log(event);
         this.setState({
             value: newValue,
         });
     };
 
     onSuggestionSelected = (event: React.FormEvent, { suggestionValue }: { suggestionValue: string }) => {
+        console.log(event);
         this.props.onLocationSelected(suggestionValue);
         this.setState({
             value: '', // Clear input value after selecting a suggestion
