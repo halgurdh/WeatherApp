@@ -284,7 +284,7 @@ class AutosuggestComponent extends Component<AutosuggestProps, AutosuggestState>
         };
 
         return (
-            <div>
+            <div className='autoSuggest'>
                 <Autosuggest
                     suggestions={suggestions}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
