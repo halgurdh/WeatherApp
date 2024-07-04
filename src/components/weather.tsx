@@ -15,6 +15,7 @@ interface WeatherData {
                     text: string;
                     icon: string;
                 };
+                totalprecip_mm: number;
             };
         }[];
     };
@@ -74,8 +75,9 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
                     <h3>{new Date(day.date).toLocaleDateString()}</h3>
                     <h3>{new Date(day.date).toLocaleString('default', {weekday: 'long'})}</h3>
                     <img src={day.day.condition.icon} alt={day.day.condition.text} />
-                    <p>Temperature: {day.day.avgtemp_c}°C</p>
-                    <p>Condition: {day.day.condition.text}</p>
+                    <p>Regen: {day.day.totalprecip_mm} mm</p>
+                    <p>Temperatuur: {day.day.avgtemp_c}°C</p>
+                    <p>Weerconditie: {day.day.condition.text}</p>
                 </div>
                 
                 || !day.day.condition.text.search("Sunny") &&
@@ -83,8 +85,9 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
                     <h3>{new Date(day.date).toLocaleDateString()}</h3>
                     <h3>{new Date(day.date).toLocaleString('default', {weekday: 'long'})}</h3>
                     <img src={day.day.condition.icon} alt={day.day.condition.text} />
-                    <p>Temperature: {day.day.avgtemp_c}°C</p>
-                    <p>Condition: {day.day.condition.text}</p>
+                    <p>Regen: {day.day.totalprecip_mm} mm</p>
+                    <p>Temperatuur: {day.day.avgtemp_c}°C</p>
+                    <p>Weerconditie: {day.day.condition.text}</p>
                 </div>
             ))}
         </div>

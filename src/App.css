@@ -86,20 +86,12 @@
 /* Footer.css */
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 60px; /* Height can be adjusted based on your design */
+  position: relative;
   text-align: center;
-  padding-left: 3%;
   width: 100%;
 }
 
 .footer .container {
   padding-top: 20px;
   padding-bottom: 20px;
-}
-
-.text-muted {
-  color: #666;
 }
