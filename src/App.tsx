@@ -30,7 +30,7 @@ const App: React.FC = () => {
             <div className="App">
                 <Header/>
                 <h1>WeatherApp</h1>
-                <h3>Away from home when it rains? Find several cities you can go to for nicer weather.</h3>
+                <h3>At home and it rains? Find several cities you can go to for nicer weather.</h3>
                 <div>
                     {addedLocation.map((location, index) => (
                         <div key={index}>
