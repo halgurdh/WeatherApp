@@ -73,8 +73,8 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
         <h2>10-Day Weather Forecast for {name}, {country}</h2>
         <div className="forecast">
             {weatherData.forecast.forecastday.map((day, index) => {
-                if ((day.day.condition.text.includes("Sunny") && day.day.maxwind_kph < 25) 
-                    || (day.day.totalprecip_mm == 0 && day.day.totalsnow_cm == 0) && day.day.maxwind_kph < 25) {
+                if ((day.day.condition.text.includes("Sunny") && day.day.maxwind_kph < 25 && day.day.avgtemp_c > 15) 
+                    || (day.day.totalprecip_mm == 0 && day.day.totalsnow_cm == 0) && day.day.maxwind_kph < 25 && day.day.avgtemp_c > 15) {
                     return (
                         <div key={index} className="forecast-day sunny">
                             <h3>{new Date(day.date).toLocaleDateString()}</h3>
