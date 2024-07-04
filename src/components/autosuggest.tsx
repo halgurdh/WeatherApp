@@ -57,7 +57,6 @@ class AutosuggestComponent extends Component<AutosuggestProps, AutosuggestState>
         "Madrid - Spain",
         "Rome - Italy",
         "Athens - Greece",
-        "Brussels - Belgium",
         "Vienna - Austria",
         "Stockholm - Sweden",
         "Copenhagen - Denmark",
