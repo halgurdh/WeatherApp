@@ -6,7 +6,7 @@ import Footer from './components/footer';
 import Header from './components/header';
 
 const App: React.FC = () => {
-    document.title = "WeatherApp"; // Setting document title
+    document.title = "WeatherCompare"; // Setting document title
 
     const [addedLocation, setAddedLocation] = useState<string[]>(() => {
         const storedLocations = localStorage.getItem('addedLocations');
@@ -29,7 +29,7 @@ const App: React.FC = () => {
     return (
             <div className="App">
                 <Header/>
-                <h1>WeatherApp</h1>
+                <h1>WeatherCompare</h1>
                 <h3>At home and it rains? Find several cities you can go to for nicer weather.</h3>
                 <div>
                     {addedLocation.map((location, index) => (

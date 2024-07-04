@@ -1,6 +1,6 @@
 # WeatherApp
 
-A simple weatherapp using typescript, vite, react, [WeatherAPI](https://www.weatherapi.com/)
+A simple weather compare app using typescript, vite, react, [WeatherAPI](https://www.weatherapi.com/)
 
 At home and it rains? Find several cities you can go to for nicer weather.
 
