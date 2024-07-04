@@ -33,6 +33,27 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .weather-info {
+    width: 70%!important;
+    margin-left: 3rem!important;
+  }
+  .body {
+    width: 10%!important;
+    position: absolute;
+  }
+
+  h1,h2,h3 {
+    font-size: small!important;  
+  }
+  
+  .forecast-day {
+    width: 25%!important;
+    margin-right: 1rem!important;
+    font-size: x-small;
+  }
+} 
+
 .card {
   padding: 2em;
 }
