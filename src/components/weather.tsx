@@ -16,6 +16,8 @@ interface WeatherData {
                     icon: string;
                 };
                 totalprecip_mm: number;
+                maxwind_kph: number;
+                totalsnow_cm: number;
             };
         }[];
     };
@@ -69,27 +71,32 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
         <div className="weather-info">
         <h2>10-Day Weather Forecast for {name}, {country}</h2>
         <div className="forecast">
-            {weatherData.forecast.forecastday.map((day, index) => (
-                day.day.condition.text.search("Sunny") &&
-                <div key={index} className="forecast-day">
-                    <h3>{new Date(day.date).toLocaleDateString()}</h3>
-                    <h3>{new Date(day.date).toLocaleString('default', {weekday: 'long'})}</h3>
-                    <img src={day.day.condition.icon} alt={day.day.condition.text} />
-                    <p>Regen: {day.day.totalprecip_mm} mm</p>
-                    <p>Temperatuur: {day.day.avgtemp_c}°C</p>
-                    <p>Weerconditie: {day.day.condition.text}</p>
-                </div>
-                
-                || !day.day.condition.text.search("Sunny") &&
-                <div key={index} className="forecast-day sunny">
-                    <h3>{new Date(day.date).toLocaleDateString()}</h3>
-                    <h3>{new Date(day.date).toLocaleString('default', {weekday: 'long'})}</h3>
-                    <img src={day.day.condition.icon} alt={day.day.condition.text} />
-                    <p>Regen: {day.day.totalprecip_mm} mm</p>
-                    <p>Temperatuur: {day.day.avgtemp_c}°C</p>
-                    <p>Weerconditie: {day.day.condition.text}</p>
-                </div>
-            ))}
+            {weatherData.forecast.forecastday.map((day, index) => {
+                if ((day.day.condition.text.includes("Sunny") && day.day.maxwind_kph < 18) 
+                    || (day.day.totalprecip_mm == 0 && day.day.totalsnow_cm == 0) && day.day.maxwind_kph < 18) {
+                    return (
+                        <div key={index} className="forecast-day sunny">
+                            <h3>{new Date(day.date).toLocaleDateString()}</h3>
+                            <h3>{new Date(day.date).toLocaleString('default', { weekday: 'long' })}</h3>
+                            <img src={day.day.condition.icon} alt={day.day.condition.text} />
+                            <p>Rain: {day.day.totalprecip_mm} mm</p>
+                            <p>Temperature: {day.day.avgtemp_c}°C</p>
+                            <p>Condition: {day.day.condition.text}</p>
+                        </div>
+                    );
+                } else {
+                    return (
+                        <div key={index} className="forecast-day">
+                            <h3>{new Date(day.date).toLocaleDateString()}</h3>
+                            <h3>{new Date(day.date).toLocaleString('default', { weekday: 'long' })}</h3>
+                            <img src={day.day.condition.icon} alt={day.day.condition.text} />
+                            <p>Rain: {day.day.totalprecip_mm} mm</p>
+                            <p>Temperature: {day.day.avgtemp_c}°C</p>
+                            <p>Condition: {day.day.condition.text}</p>
+                        </div>
+                    );
+                }
+            })}
         </div>
     </div>
     );
