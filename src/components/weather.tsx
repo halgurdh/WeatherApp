@@ -35,7 +35,7 @@ const Weather: React.FC<WeatherProps>  = ({location}) => {
     useEffect(() => {
         const fetchWeatherData = async (location:string) => {
             try {
-                const forecastURL = "http://api.weatherapi.com/v1/forecast.json?key=" + import.meta.env.VITE_API_KEY_WEATHER + "&q="+ location +"&days=10&aqi=no&alerts=no";
+                const forecastURL = "https://api.weatherapi.com/v1/forecast.json?key=" + import.meta.env.VITE_API_KEY_WEATHER + "&q="+ location +"&days=10&aqi=no&alerts=no";
 
                 const response = await fetch(forecastURL);
                 if (!response.ok) {
