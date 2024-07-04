@@ -211,7 +211,27 @@ class AutosuggestComponent extends Component<AutosuggestProps, AutosuggestState>
         "Basel - Switzerland",
         "Esch-sur-Alzette - Luxembourg",
         "Differdange - Luxembourg",
-        "Dudelange - Luxembourg"
+        "Dudelange - Luxembourg",
+        "Amsterdam - Netherlands",
+        "Rotterdam - Netherlands",
+        "The Hague - Netherlands",
+        "Eindhoven - Netherlands",
+        "Tilburg - Netherlands",
+        "Groningen - Netherlands",
+        "Almere Stad- Netherlands",
+        "Breda - Netherlands",
+        "Nijmegen - Netherlands",
+        "Apeldoorn - Netherlands",
+        "Haarlem - Netherlands",
+        "Arnhem - Netherlands",
+        "Zaanstad - Netherlands",
+        "Amersfoort - Netherlands",
+        "'s-Hertogenbosch - Netherlands",
+        "Zwolle - Netherlands",
+        "Leiden - Netherlands",
+        "Dordrecht - Netherlands",
+        "Ede - Netherlands",
+        "Emmen - Netherlands"
     ];
 
     getSuggestions = (value: string) => {
