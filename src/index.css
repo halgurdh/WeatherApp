@@ -66,3 +66,69 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.weather-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+.weather-info {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.daily-forecast {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.daily-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 120px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.daily-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.daily-item p {
+    margin: 5px 0;
+}
+
+.weather-container.sunny:before {
+  content: "\uD83C\uDF1E"; /* Sun with Face Emoji */
+  font-size: 2em; /* Adjust size as needed */
+}

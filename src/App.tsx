@@ -55,24 +55,27 @@ const App: React.FC = () => {
         <h3>At home and it rains? Find several cities you can go to for a nicer weather.</h3>
         <div>
             {addedLocation.map((location, index) => (
-                <div className="container" key={index}>
-                    <button title="Remove" className='buttonRemove' onClick={() => removeLocation(index)}>X</button>
-                    <div className='upDown'>
-                        {index === 0 && addedLocation.length > 1 && (
-                            <button title="Down" onClick={() => moveLocationDown(index)}>DOWN</button>
-                        )}
-                        {index > 0 && index < addedLocation.length - 1 && (
-                            <div>
-                                <button title="Up" onClick={() => moveLocationUp(index)}>UP</button>
+                <div className="weather-container">
+                    <div className="container" key={index}>
+                        <button title="Remove" className='buttonRemove' onClick={() => removeLocation(index)}>X</button>
+                        <div className='upDown'>
+                            {index === 0 && addedLocation.length > 1 && (
                                 <button title="Down" onClick={() => moveLocationDown(index)}>DOWN</button>
-                            </div>
-                        )}
-                        {index === addedLocation.length - 1 && addedLocation.length > 1 && (
-                            <button title="Up" onClick={() => moveLocationUp(index)}>UP</button>
-                        )}
+                            )}
+                            {index > 0 && index < addedLocation.length - 1 && (
+                                <div>
+                                    <button title="Up" onClick={() => moveLocationUp(index)}>UP</button>
+                                    <button title="Down" onClick={() => moveLocationDown(index)}>DOWN</button>
+                                </div>
+                            )}
+                            {index === addedLocation.length - 1 && addedLocation.length > 1 && (
+                                <button title="Up" onClick={() => moveLocationUp(index)}>UP</button>
+                            )}
+                        </div>
+                        <Weather location={location} />
                     </div>
-                    <Weather location={location} />
                 </div>
+
             ))}
         </div>
             <AutosuggestComponent onLocationSelected={addLocation} />

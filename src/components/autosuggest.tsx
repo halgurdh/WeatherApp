@@ -216,7 +216,7 @@ class AutosuggestComponent extends Component<AutosuggestProps, AutosuggestState>
         "Eindhoven - Netherlands",
         "Tilburg - Netherlands",
         "Groningen - Netherlands",
-        "Almere Stad- Netherlands",
+        "Almere - Netherlands",
         "Breda - Netherlands",
         "Nijmegen - Netherlands",
         "Apeldoorn - Netherlands",
