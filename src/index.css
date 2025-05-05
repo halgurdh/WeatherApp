@@ -131,7 +131,25 @@ button {
   font-size: 2em; /* Adjust size as needed */
 }
 
+/* mobile screens*/
 @media only screen and (max-width: 600px) {
+  body {
+    margin:0;
+  }
+
+  .weather-container {
+    max-width: 75vw;
+    padding: 0;
+  }
+
+  .forecast-day {
+    max-width: 35vw;
+  }
+
+}
+
+/* ultra wide screen 1440P */
+@media only screen and (min-width: 2000px) {
   body {
     margin:0;
   }
@@ -139,6 +157,7 @@ button {
   .weather-container {
     max-width: 80vw;
     padding: 0;
+    margin-left: -50%;
   }
 
   .forecast-day {
