@@ -92,15 +92,19 @@ const Weather: React.FC<WeatherProps> = ({location}) => {
                 {weatherData.daily.time.map((day, index) => {
                     const avgTemp = (weatherData.daily.temperature_2m_max[index] + weatherData.daily.temperature_2m_min[index]) / 2;
                     const isSunny = avgTemp > 15 && avgTemp < 30 && weatherData.daily.precipitation_sum[index] <= 2 && weatherData.daily.windspeed_10m_max[index] < 30;
-                    
+                    const isPhone = screen.width < 500;
+
                     return (
                         <div key={index} className={`forecast-day ${isSunny ? 'sunny' : ''}`}>
                             <h3>{getDate(new Date(day))}</h3>
                             <h3>{new Date(day).toLocaleString('default', { weekday: 'long' })}</h3>
                             <p>Rain: {weatherData.daily.precipitation_sum[index]} mm</p>
                             <p>Max Temperature: {weatherData.daily.temperature_2m_max[index]}°C</p>
+                            {
+                            !isPhone &&
+                            <div>
                             <p>Min Temperature: {weatherData.daily.temperature_2m_min[index]}°C</p>
-                            <p>Wind: {weatherData.daily.windspeed_10m_max[index]} km/h</p>
+                            <p>Wind: {weatherData.daily.windspeed_10m_max[index]} km/h</p></div> }
                         </div>
                     );
                 })}

@@ -4,6 +4,7 @@ import Weather from './components/weather';
 import AutosuggestComponent from './components/autosuggest';
 import Footer from './components/footer';
 import Header from './components/header';
+import './App.css';
 
 const App: React.FC = () => {
     document.title = "WeatherCompare"; // Setting document title
@@ -51,8 +52,8 @@ const App: React.FC = () => {
     return (
         <div className="App">
         <Header />
-        <h1>WeatherCompare</h1>
-        <h3>At home and it rains? Find several cities you can go to for a nicer weather.</h3>
+        <h1 className='logo'>WeatherCompare</h1>
+        <h3 className='description'>At home and it rains? Find several cities you can go to for a nicer weather.</h3>
         <div>
             {addedLocation.map((location, index) => (
                 <div className="weather-container">
